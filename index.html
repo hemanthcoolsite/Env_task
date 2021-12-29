@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environments dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="javascript" href="javascript/loadingJson.js">
+</head>
+
+<body>
+    <!--login div-->
+    <center id="loginHide" class="cont animate">
+
+        <div class="imgcontainer">
+            <img width="90px" height="40px" src="images/logo.png" alt="photo" class="pro-img" />
+        </div>
+        <div><label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name='uname' id="user" required></div>
+
+        <div><label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name='psw' id="psw" required></div>
+
+        <button type="submit" id="loginSub">Login</button>
+        <p id="error"></p>
+    </center>
+    <!--main content is goes from here-->
+    <div id="main" class="container-fluid">
+        <!--Logo of the organization-->
+        <div>
+            <img width="90px" src="images/logo.png" alt="photo" class="pro-img" />
+        </div>
+        <div class="row">
+            <div class="col">
+                <span style="font-size:40px; color:white;" class="nav">Environments Dashboard</span>
+            </div>
+            <div class="col" id="pdiv">
+                <p id="pid"><span style="font-size:30px;color:red;" id="espan"></span><br/><span>Total Environments</span></p>
+            </div>
+        </div>
+        <a id="atag" href="result.csv" download="Env_Report">
+            Download Report<img src="images/download.png" id="aimg" alt="download-icon">
+        </a>
+        <div class="row">
+            <div class="col-3">
+                <input type="text" name="searchBar" id="searchBar" placeholder="search" />
+                <button id="searchbut" onclick="hide();"><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+        <div class="col-3" id="downl">
+
+        </div>
+        <div id="id01" class="modal">
+            <div class="modal-content animate">
+                <div class="imgcontainer">
+                    <span onclick="release();" class="close" title="Close Modal">&times;</span>
+                </div>
+                <div class="container">
+                    <div id="div">
+                        <p><span id="p">Env Name :</span> <span id="id11"></span></p>
+                        <p><span id="p">TA Version :</span> <span id="id12"></span></p>
+                        <p><span id="p">OCS Version :</span> <span id="id13"></span></p>
+                        <p><span id="p">WSC Version :</span><span id="id14"></span></p>
+                        <p><span id="p">DB Type :</span><span id="id15"></span></p>
+                        <p><span id="p">Host :</span><span id="id16"></span></p>
+                        <p><span id="p">OS login:</span><span id="id17"></span></p>
+                        <p><span id="p">OS Password :</span><span id="id18"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tab">
+            <table id="details">
+                <thead>
+                    <tr>
+                        <th id="1">S.I</th>
+                        <th id="2">Environment Name</th>
+                        <th id="3">TA Version</th>
+                        <th id="4">OCS Version</th>
+                        <th id="5">WSC Version</th>
+                        <th id="6">DataBase</th>
+                        <th id="7">Host</th>
+                        <th id="8">User</th>
+                        <th id="9">Password</th>
+                    </tr>
+                </thead>
+
+                <tbody id=></tbody>
+            </table>
+        </div>
+        <footer id="footer">
+            <p id="disp1">Work by <span style="color:red;"><b>WealthSuite</b></span> Team</p>
+            <div id="to"></div>
+            <p id="disp">Designed by Hemanth</p>
+        </footer>
+        <script src="javascript/loadingJson.js"></script>
+        <!-- <script src="output.json"></script> -->
+</body>
+
+</html>
